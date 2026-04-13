@@ -1,59 +1,116 @@
-# CloudTechWebsite
+# Cloud Tech Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.2.
+A modern Angular SPA inspired by DXC Technology's Public Cloud Service Excellence portal.
 
-## Development server
+---
 
-To start a local development server, run:
+## Prerequisites
 
+Install these before anything else:
+
+### 1. Node.js
+- Download from: https://nodejs.org
+- Choose the **LTS** version
+- Run the installer
+
+Verify:
+```bash
+node -v
+npm -v
+```
+
+### 2. Angular CLI
+```bash
+npm install -g @angular/cli
+```
+
+Verify:
+```bash
+ng version
+```
+
+### 3. Git
+- Download from: https://git-scm.com/download/win
+- Run the installer
+
+Verify:
+```bash
+git --version
+```
+
+---
+
+## Getting Started
+
+### Clone the repository
+```bash
+git clone https://github.com/Aasritha229/cloud-tech-website.git
+```
+
+### Navigate into the project
+```bash
+cd cloud-tech-website
+```
+
+### Install dependencies
+```bash
+npm install
+```
+
+### Run the development server
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+Open your browser and go to:
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
+## Build for Production
 ```bash
-ng generate --help
+ng build --configuration=production
 ```
 
-## Building
+---
 
-To build the project run:
-
+## Deploy to GitHub Pages
 ```bash
-ng build
+ng build --configuration=production --base-href "https://Aasritha229.github.io/cloud-tech-website/"
+npx angular-cli-ghpages --dir=dist/cloud-tech-website/browser
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## Tech Stack
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+- Angular 17+
+- TypeScript
+- SCSS
+- @ng-icons/heroicons
+- fast-check (property-based testing)
 
-```bash
-ng test
+---
+
+## Project Structure
+
+```
+src/
+  app/
+    components/
+      nav/          ← DXC purple header + navigation
+      hero/         ← Full-viewport hero with particle animation
+      services/     ← Cloud Operational Excellence content
+      footer/       ← DXC footer
+    shared/
+      services/     ← ScrollService, CounterAnimationService
+      directives/   ← ObserveVisibilityDirective
+      models/       ← TypeScript interfaces
+    styles/         ← SCSS tokens, mixins, typography
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+© 2025 DXC Technology Company. All rights reserved.

@@ -1,0 +1,38 @@
+<!-- DXC Header -->
+<header class="dxc-header">
+  <a class="dxc-logo" href="#" aria-label="DXC Technology">
+    <svg viewBox="0 0 120 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="2" y="44" font-family="Arial Black, sans-serif" font-size="46" font-weight="900" fill="white">D</text>
+      <text x="38" y="44" font-family="Arial Black, sans-serif" font-size="46" font-weight="900" fill="white">X</text>
+      <text x="76" y="44" font-family="Arial Black, sans-serif" font-size="46" font-weight="900" fill="white">C</text>
+      <rect x="2" y="47" width="116" height="3" fill="white"/>
+      <text x="2" y="52" font-family="Arial, sans-serif" font-size="7" fill="rgba(255,255,255,0.75)" letter-spacing="2">TECHNOLOGY</text>
+    </svg>
+  </a>
+  <span class="dxc-header-title">Public Cloud Service Excellence</span>
+</header>
+
+<!-- DXC Primary Nav -->
+<nav class="dxc-nav" aria-label="Main navigation">
+  <a class="dxc-nav-link active" routerLink="." [fragment]="'home'">Home</a>
+  <a class="dxc-nav-link" routerLink="." [fragment]="'services'">Our Focus Areas</a>
+  <a class="dxc-nav-link" href="#">Cloud Operations ▾</a>
+  <a class="dxc-nav-link" href="#">Customer Stories ▾</a>
+  <a class="dxc-nav-link" href="#">Key Links ▾</a>
+  <a class="dxc-nav-link" routerLink="." [fragment]="'contact'">Contact Us</a>
+
+  <!-- Mobile hamburger -->
+  <button class="dxc-hamburger" aria-label="Toggle menu" [attr.aria-expanded]="menuOpen" (click)="toggleMenu()">
+    <span aria-hidden="true">&#9776;</span>
+  </button>
+</nav>
+
+<!-- Mobile dropdown -->
+<div class="dxc-mobile-menu" *ngIf="menuOpen">
+  <a class="dxc-nav-link" routerLink="." [fragment]="'home'" (click)="menuOpen=false">Home</a>
+  <a class="dxc-nav-link" routerLink="." [fragment]="'services'" (click)="menuOpen=false">Our Focus Areas</a>
+  <a class="dxc-nav-link" href="#" (click)="menuOpen=false">Cloud Operations</a>
+  <a class="dxc-nav-link" href="#" (click)="menuOpen=false">Customer Stories</a>
+  <a class="dxc-nav-link" href="#" (click)="menuOpen=false">Key Links</a>
+  <a class="dxc-nav-link" routerLink="." [fragment]="'contact'" (click)="menuOpen=false">Contact Us</a>
+</div>

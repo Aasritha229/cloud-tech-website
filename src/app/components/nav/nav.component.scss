@@ -1,0 +1,115 @@
+/* ── DXC Header ── */
+.dxc-header {
+  background: #6B21A8;
+  height: 88px;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  gap: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001;
+}
+
+.dxc-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+
+  svg {
+    height: 48px;
+    width: auto;
+  }
+}
+
+.dxc-header-title {
+  font-family: 'Barlow Condensed', 'Barlow', 'Segoe UI', sans-serif;
+  font-size: clamp(18px, 2.5vw, 32px);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: 0.3px;
+  line-height: 1.1;
+}
+
+/* ── DXC Primary Nav ── */
+.dxc-nav {
+  background: #6B21A8;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  padding: 0 32px;
+  gap: 2px;
+  position: fixed;
+  top: 88px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.dxc-nav-link {
+  color: rgba(255,255,255,0.88);
+  text-decoration: none;
+  font-family: 'Barlow', 'Segoe UI', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: background 0.18s;
+  white-space: nowrap;
+
+  &:hover,
+  &.active {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+  }
+}
+
+/* ── Mobile hamburger ── */
+.dxc-hamburger {
+  display: none;
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+
+  &:focus-visible {
+    outline: 2px solid rgba(255,255,255,0.6);
+    border-radius: 4px;
+  }
+}
+
+/* ── Mobile dropdown ── */
+.dxc-mobile-menu {
+  background: #5B1A9A;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem 1rem;
+  position: fixed;
+  top: 140px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+
+  .dxc-nav-link {
+    padding: 0.75rem 1rem;
+    border-radius: 4px;
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .dxc-nav .dxc-nav-link:not(.dxc-hamburger) {
+    display: none;
+  }
+
+  .dxc-hamburger {
+    display: block;
+  }
+}

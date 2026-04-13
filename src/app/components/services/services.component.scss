@@ -1,0 +1,209 @@
+@use '../../styles/mixins' as m;
+
+:host { display: block; }
+
+/* ── Section wrapper ── */
+.dxc-section {
+  background: #fff;
+  color: #1F1F2E;
+  padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.dxc-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  font-family: 'Barlow', 'Segoe UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* ── Scroll-in animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.65s ease-out both;
+}
+.delay-1 { animation-delay: 0.15s; }
+.delay-2 { animation-delay: 0.3s; }
+.delay-3 { animation-delay: 0.45s; }
+
+/* ── Section title ── */
+.page-section-title {
+  font-family: 'Barlow Condensed', 'Barlow', sans-serif;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+  color: #6B21A8;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  margin-bottom: 1.25rem;
+}
+
+.sub-heading {
+  font-weight: 700;
+  font-size: 15px;
+  margin: 1.5rem 0 0.5rem;
+  color: #1F1F2E;
+}
+
+p { color: #1F1F2E; margin-bottom: 0.75rem; }
+
+.divider {
+  border: none;
+  border-top: 1px solid #E5E7EB;
+  margin: 0.5rem 0;
+}
+
+/* ── Customer success blurb ── */
+.cs-blurb {
+  color: #1F1F2E;
+  font-size: 15px;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+}
+
+/* ── Pill buttons ── */
+.pill-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pill-btn {
+  background: #6B21A8;
+  color: #fff;
+  border: none;
+  padding: 1rem 3.5rem;
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
+
+  &:hover {
+    background: #4C1D95;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(107, 33, 168, 0.35);
+  }
+
+  &.active {
+    background: #4C1D95;
+    box-shadow: 0 4px 16px rgba(107, 33, 168, 0.4);
+  }
+}
+
+/* ── Organisation View ── */
+.org-title {
+  font-family: 'Barlow Condensed', 'Barlow', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #6B21A8;
+  margin-bottom: 1rem;
+}
+
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.accordion-item {
+  border: 1px solid #E5E7EB;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.accordion-summary {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: 'Barlow', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1F1F2E;
+  text-align: left;
+  transition: background 0.15s;
+
+  &:hover { background: #F5F4F8; }
+}
+
+.chevron {
+  font-size: 1.25rem;
+  color: #6B7280;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+  &.open { transform: rotate(180deg); }
+}
+
+.accordion-body {
+  padding: 1.25rem;
+  background: #F5F4F8;
+  p {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.65;
+    margin: 0;
+  }
+}
+
+/* ── Key Pillars ── */
+.pillars-title {
+  font-family: 'Barlow Condensed', 'Barlow', sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: #6B21A8;
+  margin-bottom: 1.25rem;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.pillar-card {
+  background: #5B21B6;
+  color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  cursor: default;
+  animation: fadeInUp 0.55s ease-out both;
+  transition: background 0.18s, transform 0.18s, box-shadow 0.18s;
+
+  &:hover {
+    background: #4C1D95;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(76, 29, 149, 0.4);
+  }
+
+  .pillar-icon { font-size: 2rem; line-height: 1; }
+
+  h3 {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    margin: 0;
+  }
+
+  p {
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.55;
+    margin: 0;
+  }
+}

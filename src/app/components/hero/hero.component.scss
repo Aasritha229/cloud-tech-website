@@ -1,0 +1,216 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 640px;
+  background: linear-gradient(135deg, #0a0e1a 0%, #0d1526 50%, #0a1628 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: var(--color-text-primary);
+  padding-top: 140px; // 88px header + 52px nav
+}
+
+// Particle canvas
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+// City skyline at bottom
+.hero__skyline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+// Cloud SVG graphic — right side on desktop, hidden on mobile
+.hero__cloud-graphic {
+  position: absolute;
+  right: 3%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.85;
+
+  @media (max-width: 900px) {
+    opacity: 0.15;
+    right: -5%;
+  }
+}
+
+.hero__cloud-svg {
+  width: clamp(280px, 38vw, 500px);
+  height: auto;
+}
+
+.hero__line {
+  animation: glow-pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; filter: drop-shadow(0 0 6px #00aaff); }
+}
+
+// Main content — left-aligned on desktop
+.hero__content {
+  position: relative;
+  z-index: 3;
+  max-width: 620px;
+  padding: 0 var(--section-padding-x);
+  margin-right: auto;
+
+  @media (max-width: 900px) {
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(0, 170, 255, 0.12);
+  border: 1px solid rgba(0, 170, 255, 0.35);
+  color: var(--color-accent-cyan);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0.375rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.04em;
+}
+
+.hero__headline {
+  font-size: var(--font-size-hero-h1);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: 1.1;
+  margin: 0 0 1.25rem;
+  letter-spacing: -0.02em;
+
+  &--accent {
+    background: linear-gradient(90deg, #00aaff, #00e5ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.hero__subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin: 0 0 2.5rem;
+  max-width: 520px;
+
+  @media (max-width: 900px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.hero__ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+
+  @media (max-width: 900px) {
+    justify-content: center;
+  }
+}
+
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-base);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-medium);
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent-cyan);
+    outline-offset: 3px;
+  }
+
+  &--primary {
+    background: linear-gradient(135deg, #00aaff, #0077cc);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 170, 255, 0.35);
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 170, 255, 0.5);
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: var(--color-accent-cyan);
+    border: 2px solid rgba(0, 229, 255, 0.5);
+
+    &:hover {
+      background: rgba(0, 229, 255, 0.08);
+      border-color: var(--color-accent-cyan);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+// Trust bar
+.hero__trust {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  @media (max-width: 900px) {
+    align-items: center;
+  }
+}
+
+.hero__trust-label {
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
+.hero__trust-logos {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.hero__trust-logo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  opacity: 0.7;
+}

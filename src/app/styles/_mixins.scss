@@ -1,0 +1,29 @@
+$breakpoints: (
+  'mobile':  320px,
+  'tablet':  768px,
+  'desktop': 1280px
+);
+
+@mixin glow-border($color: var(--color-border-glow)) {
+  box-shadow: 0 0 var(--glow-blur) $color, 0 0 calc(var(--glow-blur) * 2) $color;
+  border-color: $color;
+}
+
+@mixin section-layout {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
+}
+
+@mixin respond-to($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+
+  @if $value != null {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}. Available: #{map-keys($breakpoints)}";
+  }
+}

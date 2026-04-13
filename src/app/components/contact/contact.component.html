@@ -1,0 +1,94 @@
+<section id="contact">
+  <div class="contact-inner">
+    <h2 class="contact-heading">Get in Touch</h2>
+    <p class="contact-intro">Have a question or ready to get started? We'd love to hear from you.</p>
+
+    <div class="contact-layout">
+      <div class="contact-form-wrapper">
+        <div *ngIf="submitted" class="success-message" role="alert">
+          <span class="success-icon">✓</span>
+          <p>Thanks for reaching out! We'll get back to you shortly.</p>
+        </div>
+
+        <form *ngIf="!submitted" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              placeholder="Your name"
+              [class.invalid]="form.get('name')?.invalid && form.get('name')?.touched"
+              autocomplete="name"
+            />
+            <div
+              class="field-error"
+              *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+              role="alert"
+            >
+              Name is required.
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              formControlName="email"
+              placeholder="you@example.com"
+              [class.invalid]="form.get('email')?.invalid && form.get('email')?.touched"
+              autocomplete="email"
+            />
+            <div
+              class="field-error"
+              *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+              role="alert"
+            >
+              <span *ngIf="form.get('email')?.errors?.['required']">Email is required.</span>
+              <span *ngIf="form.get('email')?.errors?.['email']">Please enter a valid email address.</span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              formControlName="message"
+              placeholder="How can we help you?"
+              rows="5"
+              [class.invalid]="form.get('message')?.invalid && form.get('message')?.touched"
+            ></textarea>
+            <div
+              class="field-error"
+              *ngIf="form.get('message')?.invalid && form.get('message')?.touched"
+              role="alert"
+            >
+              Message is required.
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn" [disabled]="submitting">
+            <span *ngIf="!submitting">Send Message</span>
+            <span *ngIf="submitting">Sending...</span>
+          </button>
+        </form>
+      </div>
+
+      <div class="contact-alt">
+        <h3 class="alt-heading">Other Ways to Reach Us</h3>
+        <div class="alt-item">
+          <span class="alt-label">Email</span>
+          <a href="mailto:hello@cloudtech.io" class="alt-link">hello@cloudtech.io</a>
+        </div>
+        <div class="alt-item">
+          <span class="alt-label">Follow Us</span>
+          <div class="social-links">
+            <a href="https://twitter.com/cloudtech" class="alt-link" aria-label="CloudTech on Twitter" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://linkedin.com/company/cloudtech" class="alt-link" aria-label="CloudTech on LinkedIn" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

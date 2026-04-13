@@ -1,0 +1,29 @@
+:root {
+  // Colors
+  --color-bg-primary:    #0a0e1a;
+  --color-bg-secondary:  #0d1526;
+  --color-bg-card:       #111d35;
+  --color-accent-blue:   #00aaff;
+  --color-accent-cyan:   #00e5ff;
+  --color-text-primary:  #ffffff;
+  --color-text-secondary:#b0c4de;
+  --color-border-glow:   rgba(0, 170, 255, 0.6);
+
+  // Typography
+  --font-family-base:    'Inter', 'Segoe UI', sans-serif;
+  --font-size-hero-h1:   clamp(2rem, 5vw, 4rem);
+  --font-size-h2:        clamp(1.5rem, 3vw, 2.5rem);
+  --font-size-body:      1rem;
+  --font-weight-bold:    700;
+
+  // Spacing
+  --section-padding-y:   clamp(4rem, 8vw, 8rem);
+  --section-padding-x:   clamp(1rem, 5vw, 6rem);
+  --card-gap:            1.5rem;
+  --border-radius-card:  12px;
+
+  // Animation
+  --transition-fast:     150ms ease;
+  --transition-medium:   300ms ease;
+  --glow-blur:           12px;
+}

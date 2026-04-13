@@ -1,0 +1,87 @@
+<section
+  id="about"
+  observeVisibility
+  (visible)="onVisible()"
+>
+  <div class="about-inner">
+    <div class="about-columns">
+      <!-- Graphic column -->
+      <div class="about-graphic">
+        <svg
+          class="about-svg"
+          viewBox="0 0 400 400"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Cloud infrastructure illustration"
+        >
+          <!-- Background circle -->
+          <circle cx="200" cy="200" r="180" fill="rgba(0,170,255,0.05)" stroke="rgba(0,170,255,0.2)" stroke-width="1"/>
+
+          <!-- Central cloud shape -->
+          <g transform="translate(200,180)">
+            <ellipse cx="0" cy="20" rx="80" ry="40" fill="rgba(0,170,255,0.15)" stroke="var(--color-accent-blue)" stroke-width="1.5"/>
+            <ellipse cx="-30" cy="5" rx="45" ry="35" fill="rgba(0,170,255,0.15)" stroke="var(--color-accent-blue)" stroke-width="1.5"/>
+            <ellipse cx="30" cy="0" rx="50" ry="38" fill="rgba(0,170,255,0.15)" stroke="var(--color-accent-blue)" stroke-width="1.5"/>
+            <ellipse cx="0" cy="-10" rx="60" ry="40" fill="rgba(0,170,255,0.15)" stroke="var(--color-accent-blue)" stroke-width="1.5"/>
+          </g>
+
+          <!-- Connecting lines to nodes -->
+          <line x1="200" y1="170" x2="100" y2="90" stroke="rgba(0,229,255,0.4)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="200" y1="170" x2="300" y2="90" stroke="rgba(0,229,255,0.4)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="200" y1="200" x2="80" y2="260" stroke="rgba(0,229,255,0.4)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line x1="200" y1="200" x2="320" y2="260" stroke="rgba(0,229,255,0.4)" stroke-width="1" stroke-dasharray="4 4"/>
+
+          <!-- Node: Server (top-left) -->
+          <g transform="translate(100,90)">
+            <rect x="-22" y="-22" width="44" height="44" rx="8" fill="var(--color-bg-card)" stroke="var(--color-accent-blue)" stroke-width="1.5"/>
+            <rect x="-12" y="-10" width="24" height="6" rx="2" fill="var(--color-accent-blue)" opacity="0.8"/>
+            <rect x="-12" y="0" width="24" height="6" rx="2" fill="var(--color-accent-cyan)" opacity="0.6"/>
+            <circle cx="10" cy="-7" r="2" fill="var(--color-accent-cyan)"/>
+          </g>
+
+          <!-- Node: Database (top-right) -->
+          <g transform="translate(300,90)">
+            <rect x="-22" y="-22" width="44" height="44" rx="8" fill="var(--color-bg-card)" stroke="var(--color-accent-blue)" stroke-width="1.5"/>
+            <ellipse cx="0" cy="-8" rx="12" ry="5" fill="none" stroke="var(--color-accent-cyan)" stroke-width="1.5"/>
+            <line x1="-12" y1="-8" x2="-12" y2="8" stroke="var(--color-accent-cyan)" stroke-width="1.5"/>
+            <line x1="12" y1="-8" x2="12" y2="8" stroke="var(--color-accent-cyan)" stroke-width="1.5"/>
+            <ellipse cx="0" cy="8" rx="12" ry="5" fill="none" stroke="var(--color-accent-cyan)" stroke-width="1.5"/>
+          </g>
+
+          <!-- Node: Mobile (bottom-left) -->
+          <g transform="translate(80,260)">
+            <rect x="-22" y="-22" width="44" height="44" rx="8" fill="var(--color-bg-card)" stroke="var(--color-accent-blue)" stroke-width="1.5"/>
+            <rect x="-8" y="-14" width="16" height="26" rx="3" fill="none" stroke="var(--color-accent-cyan)" stroke-width="1.5"/>
+            <circle cx="0" cy="10" r="2" fill="var(--color-accent-cyan)"/>
+          </g>
+
+          <!-- Node: Laptop (bottom-right) -->
+          <g transform="translate(320,260)">
+            <rect x="-22" y="-22" width="44" height="44" rx="8" fill="var(--color-bg-card)" stroke="var(--color-accent-blue)" stroke-width="1.5"/>
+            <rect x="-14" y="-10" width="28" height="18" rx="2" fill="none" stroke="var(--color-accent-cyan)" stroke-width="1.5"/>
+            <line x1="-18" y1="8" x2="18" y2="8" stroke="var(--color-accent-cyan)" stroke-width="1.5"/>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Text column -->
+      <div class="about-text">
+        <span class="about-badge">About Us</span>
+        <h2 class="about-heading">Built for Enterprise.<br>Designed for Scale.</h2>
+        <p class="about-body">
+          We are a leading cloud infrastructure provider helping enterprises scale with confidence.
+          Our platform delivers enterprise-grade reliability, security, and performance across a global
+          network of data centers. From startups to Fortune 500 companies, we power the digital
+          transformation journey with cutting-edge technology and dedicated support.
+        </p>
+
+        <ul class="stats-list" aria-label="Key statistics">
+          <li *ngFor="let stat of stats; let i = index" class="stat-item">
+            <span class="stat-value">{{ displayValues[i] }}{{ stat.suffix }}</span>
+            <span class="stat-label">{{ stat.label }}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

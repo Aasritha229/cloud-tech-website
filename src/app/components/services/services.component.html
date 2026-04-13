@@ -1,0 +1,79 @@
+<section id="services" class="dxc-section">
+  <div class="dxc-inner">
+
+    <!-- Cloud Operational Excellence -->
+    <div class="fade-in-up">
+      <h2 class="page-section-title">Cloud Operational Excellence</h2>
+      <p>Cloud Operational Excellence is increasingly crucial in today's digital landscape, offering organizations
+        the flexibility, scalability, and efficiency needed to thrive in the modern business environment.
+        It intricate balance between controlling costs and ensuring robust security measures within cloud
+        service governance, providing insights into key strategies and best practices to optimize cloud
+        utilization effectively.</p>
+
+      <p class="sub-heading">Understanding Cloud Operational Excellence:</p>
+      <p>Cloud operational excellence encompasses the processes, tools, and strategies utilized by Customers/DXC
+        to oversee and optimize their utilization of cloud resources. This includes provisioning and
+        deprovisioning cloud services, monitoring performance metrics, optimizing costs, ensuring security
+        compliance, and managing user access and permissions. By effectively managing these aspects, the benefits
+        of cloud computing can be leveraged while mitigating risks and maximizing value.</p>
+
+      <p class="sub-heading">Striking the Balance:</p>
+      <p>In conclusion, effective Cloud Operational Excellence requires a delicate balance between controlling costs
+        and ensuring robust security measures. By implementing proactive cost control strategies and robust security
+        practices, organizations can optimize their cloud utilization, enhance operational efficiency, and mitigate
+        security risks effectively. As cloud adoption continues to accelerate, prioritizing effective cloud
+        operational excellence will be essential to leverage the full potential of cloud computing while
+        safeguarding their data, applications, processes and infrastructure in the digital age.</p>
+    </div>
+
+    <hr class="divider" />
+
+    <!-- Customer Success blurb -->
+    <div class="fade-in-up delay-1">
+      <p class="cs-blurb">In a customer success-oriented approach, the relationship between the customer and the
+        company is viewed as a partnership. The success of the customer is directly linked to the success of the
+        business. This approach recognizes that acquiring a new customer is just the beginning, and the real value
+        comes from fostering a positive and enduring relationship.</p>
+
+      <!-- Pill Buttons -->
+      <div class="pill-buttons">
+        <button class="pill-btn" [class.active]="activeView === 'delivery'" (click)="activeView = 'delivery'">
+          Delivery Wise
+        </button>
+        <button class="pill-btn" [class.active]="activeView === 'region'" (click)="activeView = 'region'">
+          Region Wise
+        </button>
+      </div>
+    </div>
+
+    <!-- Organisation View -->
+    <div class="fade-in-up delay-2">
+      <div class="org-title">Organization View</div>
+      <div class="accordion-list">
+        <div class="accordion-item" *ngFor="let item of orgItems">
+          <button class="accordion-summary" (click)="toggleOrg(item)" [attr.aria-expanded]="item.open">
+            <span>{{ item.title }}</span>
+            <span class="chevron" [class.open]="item.open">&#8964;</span>
+          </button>
+          <div class="accordion-body" *ngIf="item.open">
+            <p>{{ item.content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Pillars -->
+    <div class="fade-in-up delay-3">
+      <div class="pillars-title">Key Pillars</div>
+      <div class="pillars-grid">
+        <div class="pillar-card" *ngFor="let pillar of pillars; let i = index"
+             [style.animation-delay]="(i * 100) + 'ms'">
+          <div class="pillar-icon">{{ pillar.icon }}</div>
+          <h3>{{ pillar.title }}</h3>
+          <p>{{ pillar.description }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

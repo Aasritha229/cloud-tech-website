@@ -1,0 +1,83 @@
+<section id="home" class="hero">
+  <!-- Particle canvas layer (behind everything) -->
+  <canvas #particleCanvas class="hero__canvas" aria-hidden="true"></canvas>
+
+  <!-- City skyline silhouette at bottom edge (CSS-drawn) -->
+  <div class="hero__skyline" aria-hidden="true">
+    <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,200 L0,140 L60,140 L60,100 L80,100 L80,80 L100,80 L100,60 L120,60 L120,80 L140,80 L140,100 L160,100 L160,120 L200,120 L200,90 L220,90 L220,70 L240,70 L240,50 L260,50 L260,70 L280,70 L280,90 L300,90 L300,110 L340,110 L340,80 L360,80 L360,60 L380,60 L380,40 L400,40 L400,60 L420,60 L420,80 L440,80 L440,100 L480,100 L480,70 L500,70 L500,50 L520,50 L520,30 L540,30 L540,50 L560,50 L560,70 L580,70 L580,90 L620,90 L620,60 L640,60 L640,40 L660,40 L660,20 L680,20 L680,40 L700,40 L700,60 L720,60 L720,80 L760,80 L760,50 L780,50 L780,30 L800,30 L800,10 L820,10 L820,30 L840,30 L840,50 L860,50 L860,70 L900,70 L900,90 L940,90 L940,60 L960,60 L960,40 L980,40 L980,60 L1000,60 L1000,80 L1040,80 L1040,100 L1080,100 L1080,70 L1100,70 L1100,50 L1120,50 L1120,70 L1140,70 L1140,90 L1180,90 L1180,110 L1220,110 L1220,80 L1240,80 L1240,60 L1260,60 L1260,80 L1280,80 L1280,100 L1320,100 L1320,120 L1360,120 L1360,140 L1440,140 L1440,200 Z" fill="#0d1526" opacity="0.9"/>
+      <path d="M0,200 L0,160 L80,160 L80,130 L120,130 L120,150 L200,150 L200,120 L260,120 L260,140 L340,140 L340,110 L400,110 L400,130 L480,130 L480,100 L540,100 L540,120 L620,120 L620,90 L680,90 L680,110 L760,110 L760,80 L820,80 L820,100 L900,100 L900,120 L960,120 L960,100 L1020,100 L1020,120 L1100,120 L1100,140 L1180,140 L1180,160 L1260,160 L1260,140 L1360,140 L1360,160 L1440,160 L1440,200 Z" fill="#0a0e1a" opacity="0.95"/>
+    </svg>
+  </div>
+
+  <!-- Central cloud SVG with tech icon nodes -->
+  <div class="hero__cloud-graphic" aria-hidden="true">
+    <svg class="hero__cloud-svg" viewBox="0 0 500 360" xmlns="http://www.w3.org/2000/svg">
+      <!-- Animated connecting lines (CSS animated) -->
+      <line class="hero__line" x1="250" y1="180" x2="80"  y2="80"  stroke="#00aaff" stroke-width="1.5" stroke-dasharray="6 4" />
+      <line class="hero__line" x1="250" y1="180" x2="420" y2="80"  stroke="#00aaff" stroke-width="1.5" stroke-dasharray="6 4" />
+      <line class="hero__line" x1="250" y1="180" x2="80"  y2="290" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="6 4" />
+      <line class="hero__line" x1="250" y1="180" x2="420" y2="290" stroke="#00e5ff" stroke-width="1.5" stroke-dasharray="6 4" />
+
+      <!-- Cloud shape -->
+      <ellipse cx="250" cy="190" rx="70" ry="44" fill="#111d35" stroke="#00aaff" stroke-width="2"/>
+      <ellipse cx="218" cy="175" rx="42" ry="33" fill="#111d35" stroke="#00aaff" stroke-width="2"/>
+      <ellipse cx="282" cy="170" rx="46" ry="36" fill="#111d35" stroke="#00aaff" stroke-width="2"/>
+      <ellipse cx="250" cy="160" rx="50" ry="36" fill="#111d35" stroke="#00aaff" stroke-width="2"/>
+      <!-- Cloud icon text -->
+      <text x="250" y="185" text-anchor="middle" font-size="28" fill="#00e5ff">☁</text>
+
+      <!-- Node: Server -->
+      <circle cx="80" cy="80" r="34" fill="#111d35" stroke="#00aaff" stroke-width="2"/>
+      <text x="80" y="72" text-anchor="middle" font-size="10" fill="#b0c4de">SERVER</text>
+      <rect x="64" y="76" width="32" height="5" rx="2" fill="#00aaff" opacity="0.8"/>
+      <rect x="64" y="84" width="32" height="5" rx="2" fill="#00e5ff" opacity="0.6"/>
+      <circle cx="92" cy="78" r="2.5" fill="#00e5ff"/>
+
+      <!-- Node: Database -->
+      <circle cx="420" cy="80" r="34" fill="#111d35" stroke="#00e5ff" stroke-width="2"/>
+      <text x="420" y="72" text-anchor="middle" font-size="10" fill="#b0c4de">DATABASE</text>
+      <ellipse cx="420" cy="78" rx="14" ry="5" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+      <line x1="406" y1="78" x2="406" y2="92" stroke="#00e5ff" stroke-width="1.5"/>
+      <line x1="434" y1="78" x2="434" y2="92" stroke="#00e5ff" stroke-width="1.5"/>
+      <ellipse cx="420" cy="92" rx="14" ry="5" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+
+      <!-- Node: Mobile -->
+      <circle cx="80" cy="290" r="34" fill="#111d35" stroke="#00aaff" stroke-width="2"/>
+      <text x="80" y="282" text-anchor="middle" font-size="10" fill="#b0c4de">MOBILE</text>
+      <rect x="68" y="285" width="24" height="36" rx="4" fill="none" stroke="#00aaff" stroke-width="1.5"/>
+      <circle cx="80" cy="316" r="3" fill="#00aaff"/>
+
+      <!-- Node: Laptop -->
+      <circle cx="420" cy="290" r="34" fill="#111d35" stroke="#00e5ff" stroke-width="2"/>
+      <text x="420" y="282" text-anchor="middle" font-size="10" fill="#b0c4de">LAPTOP</text>
+      <rect x="404" y="286" width="32" height="22" rx="2" fill="none" stroke="#00e5ff" stroke-width="1.5"/>
+      <line x1="398" y1="308" x2="442" y2="308" stroke="#00e5ff" stroke-width="1.5"/>
+    </svg>
+  </div>
+
+  <!-- Hero content -->
+  <div class="hero__content">
+    <h1 class="hero__headline">Power Your Business<br>with <span class="hero__headline--accent">Cloud Technology</span></h1>
+    <p class="hero__subtitle">
+      Scalable, secure, and intelligent cloud solutions powering your digital transformation journey.
+    </p>
+    <div class="hero__ctas">
+      <a class="hero__cta hero__cta--primary" routerLink="." [fragment]="'contact'">
+        Get Started Free
+      </a>
+      <button class="hero__cta hero__cta--secondary" type="button" (click)="onLearnMore()">
+        Explore Services
+      </button>
+    </div>
+    <div class="hero__trust">
+      <span class="hero__trust-label">Trusted by 500+ enterprises worldwide</span>
+      <div class="hero__trust-logos">
+        <span class="hero__trust-logo">AWS</span>
+        <span class="hero__trust-logo">Azure</span>
+        <span class="hero__trust-logo">GCP</span>
+        <span class="hero__trust-logo">K8s</span>
+      </div>
+    </div>
+  </div>
+</section>

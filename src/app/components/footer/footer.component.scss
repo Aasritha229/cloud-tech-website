@@ -1,0 +1,20 @@
+.dxc-footer {
+  background: #6B21A8;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: 'Barlow', 'Segoe UI', sans-serif;
+  font-size: 12.5px;
+  padding: 14px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dxc-footer-link {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: color 0.18s;
+
+  &:hover { color: #fff; }
+}

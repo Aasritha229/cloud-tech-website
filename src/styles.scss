@@ -1,0 +1,22 @@
+@use 'app/styles/tokens' as *;
+@use 'app/styles/reset' as *;
+@use 'app/styles/typography' as *;
+@use 'app/styles/mixins' as *;
+
+// Global focus-visible indicator for keyboard navigation
+:focus-visible {
+  outline: 2px solid var(--color-accent-cyan);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+// Remove default focus outline (replaced by :focus-visible above)
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+// Prevent horizontal overflow at all breakpoints
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
